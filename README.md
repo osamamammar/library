@@ -7,7 +7,7 @@ JS practice project from (The Odin Project). library
 <p align="center">
    Desktop
    <br></br>
-  <img width="600" src="https://raw.githubusercontent.com/osamamammar/library/main/src/images/desktop.png">
+  <img width="800" src="https://raw.githubusercontent.com/osamamammar/library/main/src/images/desktop.png">
 </p>
 
 <p align="center">
