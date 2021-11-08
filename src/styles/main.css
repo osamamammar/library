@@ -36,3 +36,5 @@
 @import 'utilities/screen-reader.css';
 @import 'utilities/text-transform.css';
 @import 'utilities/display.css';
+
+@import './style.css';

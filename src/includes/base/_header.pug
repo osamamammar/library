@@ -1,4 +1,21 @@
-header
-	h1
-		a(href="index.html")
-			| Hello World
+header.header-container
+	h1.visually-hidden
+			| Library
+			
+	nav.nav-container
+		.nav-container__logo
+			img.nav-container__logo--image(src='./images/library-logo.svg' alt='logo')
+			h2.nav-container__logo--title Library
+
+		.nav-container__end
+			p.nav-container__end--description
+				|	A vanilla JS project from  <strong> The Odin Project </strong>  curriculum.
+			.nav-container__end--btn
+				a(href="https://github.com/osamamammar" target='_blank')
+					button.nav-container__end--btn--gray(type='button')
+						img.nav__btn--img(src="./images/github-logo.svg", alt="github-logo")
+						|my GitHub
+				a(href="https://github.com/osamamammar/library" target='_blank')
+					button.nav-container__end--btn--light(type='button')
+						img.nav__btn--img(src="./images/github-logo.svg", alt="github-logo")
+						|Source code
