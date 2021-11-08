@@ -209,6 +209,8 @@
 }
 
 .table-container {
+	min-height: 492px;
+
 	&__title {
 		margin-top: 0;
 		margin-bottom: 1.5rem;
@@ -302,7 +304,7 @@ table td {
 	border-radius: 2px;
 	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 	white-space: nowrap;
-	min-width: 62px;
+	min-width: 62.05px;
 	transition: all 0.2s linear;
 	&:hover {
 		background-color: var(--text-color);
@@ -331,4 +333,9 @@ table td {
 			transform: scale(0.9);
 		}
 	}
+}
+
+.error-msg {
+	color: #c30000;
+	display: none;
 }
