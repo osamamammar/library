@@ -148,6 +148,7 @@
 		flex-grow: 2;
 		flex-shrink: 2;
 		padding: 0.75rem;
+		min-height: 134px;
 		&:nth-child(3) {
 			flex-grow: 1;
 			flex-shrink: 1;
@@ -209,7 +210,7 @@
 }
 
 .table-container {
-	min-height: 492px;
+	min-height: 474px;
 
 	&__title {
 		margin-top: 0;
