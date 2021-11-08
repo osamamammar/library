@@ -6,22 +6,22 @@ main.main-container
       form.form
         .card-container__columns
 
-          .card-container__column.field
+          .card-container__column
             label.card-container__column--label(for='bookName') Book
             input.card-container__column--input(type='text' name="bookName" id="bookName" placeholder='Enter book name')
             small.error-msg please enter book name *
 
-          .card-container__column.field
+          .card-container__column
             label.card-container__column--label(for='authorName') Author
             input.card-container__column--input(type='text' name="authorName" id="authorName" placeholder='Enter author name')
             small.error-msg please enter author name *
 
-          .card-container__column.field
+          .card-container__column
             label.card-container__column--label(for='pagesNumber') Pages
             input.card-container__column--input(type='number' name="pagesNumber" id="pagesNumber" placeholder='Enter number' step='1')
             small.error-msg please enter number bigger than 0 *
 
-          .card-container__column.field
+          .card-container__column
             label.card-container__column--label(for='statue') Statue
             select.card-container__column--select(id="statue" name='statue')
               option(value='read' selected) read
@@ -43,27 +43,3 @@ main.main-container
             th Statue
             th Delete
         tbody.books_container
-          //- tr
-          //-   td you dont know js
-          //-   td kyle simpson
-          //-   td 200
-          //-   td
-          //-     button.button.dark read
-          //-   td
-          //-     button.delete
-          //- tr
-          //-   td js elequent
-          //-   td keygen hill
-          //-   td 250
-          //-   td
-          //-     button.button not read
-          //-   td
-          //-     button.delete
-          //- tr
-          //-   td python crash course
-          //-   td adolf hitler
-          //-   td 300
-          //-   td
-          //-     button.button.dark read
-          //-   td
-          //-     button.delete
