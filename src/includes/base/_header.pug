@@ -1,3 +1,4 @@
+.overlay
 header.header-container
 	h1.visually-hidden
 			| Library
@@ -19,3 +20,14 @@ header.header-container
 					button.nav-container__end--btn--light(type='button')
 						img.nav__btn--img(src="./images/github-logo.svg", alt="github-logo")
 						|Source code
+	.modal-container
+		.modal-container__header
+			h3.modal-container__header--title Book Removal
+			span.modal-container__header--icon
+		.modal-container__content
+			p.modal-container__content--description Are you sure you want to delete this book ?
+			.modal-container__content--cta-container
+				button.cta-btn--cancel(type='button')
+					|Cancel
+				button.cta-btn--delete(type='button')
+					|Delete

@@ -1,7 +1,7 @@
 main.main-container
   section.card-container
     .card-container__content
-      h3.card-container__content--title
+      h4.card-container__content--title
         | Add new book
       form.form
         .card-container__columns
@@ -9,17 +9,17 @@ main.main-container
           .card-container__column
             label.card-container__column--label(for='bookName') Book
             input.card-container__column--input(type='text' name="bookName" id="bookName" placeholder='Enter book name')
-            small.error-msg please enter book name *
+            small.book-error-msg please enter book name *
 
           .card-container__column
             label.card-container__column--label(for='authorName') Author
             input.card-container__column--input(type='text' name="authorName" id="authorName" placeholder='Enter author name')
-            small.error-msg please enter author name *
+            small.author-error-msg please enter author name *
 
           .card-container__column
             label.card-container__column--label(for='pagesNumber') Pages
             input.card-container__column--input(type='number' name="pagesNumber" id="pagesNumber" placeholder='Enter number' step='1')
-            small.error-msg please enter number bigger than 0 *
+            small.number-error-msg please enter number bigger than 0 *
 
           .card-container__column
             label.card-container__column--label(for='statue') Statue
@@ -31,7 +31,7 @@ main.main-container
           | Submit
 
   section.table-container
-    h4.table-container__title
+    h5.table-container__title
       | my Books
     .table-container__content
       table.table
