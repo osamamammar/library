@@ -19,13 +19,13 @@ JS practice project from (The Odin Project). library
 <p align="center">
    Validation
    <br></br>
-  <img height="600" src="">
+  <img width="600" src="https://raw.githubusercontent.com/osamamammar/library/main/src/images/validation.png">
 </p>
 
 <p align="center">
     Modal
    <br></br>
-  <img height="600" src="">
+  <img width="600" height="300" src="https://raw.githubusercontent.com/osamamammar/library/main/src/images/modal.png">
 </p>
 ## Getting started
 
