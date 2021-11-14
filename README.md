@@ -16,6 +16,17 @@ JS practice project from (The Odin Project). library
   <img height="600" src="https://raw.githubusercontent.com/osamamammar/library/main/src/images/mobile.png">
 </p>
 
+<p align="center">
+   Validation
+   <br></br>
+  <img height="600" src="">
+</p>
+
+<p align="center">
+    Modal
+   <br></br>
+  <img height="600" src="">
+</p>
 ## Getting started
 
 - Clone the repository then write `npm i`
