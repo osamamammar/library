@@ -6,6 +6,8 @@ let clearFormFlag = false;
 // flag to indicate and check validation
 let validationFormFlag = false;
 
+let currentBookId = null;
+
 // ******************************************************************
 // node elements for inputs values
 const bookName = document.querySelector('#bookName');
@@ -27,6 +29,7 @@ const modalContainer = document.querySelector('.modal-container');
 const closeModalIcon = document.querySelector('.modal-container__header--icon');
 const modalCancelBtn = document.querySelector('.cta-btn--cancel');
 const modalDeleteBtn = document.querySelector('.cta-btn--delete');
+const modalDescription = document.querySelector('.modal-container__content--description');
 
 // *******************************************************************
 
@@ -36,12 +39,24 @@ closeModalIcon.addEventListener('click', closeModal);
 function closeModal() {
 	modalContainer.classList.remove('open');
 	overlay.classList.remove('active');
+	modalCancelBtn.removeEventListener('click', closeModal);
+	modalDeleteBtn.removeEventListener('click', handleDeleteModalBtn);
 }
 
 // function to open modal
-function openModal() {
+function openModal(currentBook) {
 	overlay.classList.add('active');
 	modalContainer.classList.add('open');
+	changeModalDescription(myLibrary[currentBook]);
+}
+
+// function to change modal description
+function changeModalDescription(book) {
+	if (book) {
+		modalDescription.innerHTML = `Are you sure you want to delete <span class="description-title">"${book.bookName}"</span> by <span class="description-title">"${book.authorName}"</span> ?`;
+	} else {
+		return;
+	}
 }
 
 // event listener for submit books form btn
@@ -188,7 +203,7 @@ function changeStatueBtnAfterRenderUi() {
 	const changeStatueBtns = document.querySelectorAll('.statue-btn');
 
 	if (changeStatueBtns.length != 0) {
-		changeStatueBtns.forEach((change) => change.addEventListener('click', handleChangeEvent));
+		changeStatueBtns.forEach((changeBtn) => changeBtn.addEventListener('click', handleChangeEvent));
 	} else {
 		return;
 	}
@@ -219,22 +234,26 @@ function deleteBookBtnAfterRenderUi() {
 // function to handle delete event
 function handleDeleteEvent(e) {
 	const currentTarget = Number(e.target.dataset.id);
-	openModal();
-	modalCancelBtn.addEventListener('click', closeModal);
-	modalDeleteBtn.addEventListener(
-		'click',
-		() => {
-			handleDeleteModalBtn(currentTarget);
-		},
-		{ once: true }
-	);
+	openModal(currentTarget);
+	// save currentTarget in global variable
+	currentBookId = currentTarget;
 }
 
+// event listener for cancel modal btn
+modalCancelBtn.addEventListener('click', () => {
+	closeModal();
+});
+
+// event listener for delete modal btn
+modalDeleteBtn.addEventListener('click', () => {
+	handleDeleteModalBtn(currentBookId);
+});
+
 // function to handle delete modal btn
-function handleDeleteModalBtn(currentTarget) {
+function handleDeleteModalBtn(currentBookId) {
 	// let result = myLibrary.filter((book) => book._id != currentTarget);
 	// console.log(result);
-	deleteBook(findBook(myLibrary, currentTarget));
+	deleteBook(findBook(myLibrary, currentBookId));
 	updateLibraryInLocalStorage();
 	renderUi();
 	closeModal();

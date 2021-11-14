@@ -128,7 +128,7 @@
 			&::before {
 				content: '\00D7';
 				font-size: 40px;
-				cursor:pointer;
+				cursor: pointer;
 			}
 		}
 	}
@@ -443,4 +443,9 @@ table td {
 .number-error-msg {
 	color: #c30000;
 	display: none;
+}
+
+.description-title {
+	font-weight: 100;
+	color: #980404;
 }
