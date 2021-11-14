@@ -39,8 +39,6 @@ closeModalIcon.addEventListener('click', closeModal);
 function closeModal() {
 	modalContainer.classList.remove('open');
 	overlay.classList.remove('active');
-	modalCancelBtn.removeEventListener('click', closeModal);
-	modalDeleteBtn.removeEventListener('click', handleDeleteModalBtn);
 }
 
 // function to open modal
@@ -240,14 +238,10 @@ function handleDeleteEvent(e) {
 }
 
 // event listener for cancel modal btn
-modalCancelBtn.addEventListener('click', () => {
-	closeModal();
-});
+modalCancelBtn.addEventListener('click', closeModal);
 
 // event listener for delete modal btn
-modalDeleteBtn.addEventListener('click', () => {
-	handleDeleteModalBtn(currentBookId);
-});
+modalDeleteBtn.addEventListener('click', handleDeleteModalBtn.bind(currentBookId));
 
 // function to handle delete modal btn
 function handleDeleteModalBtn(currentBookId) {
