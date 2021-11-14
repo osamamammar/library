@@ -5,7 +5,7 @@ let myLibrary = JSON.parse(localStorage.getItem('library')) || [];
 let clearFormFlag = false;
 // flag to indicate and check validation
 let validationFormFlag = false;
-
+// cache reference for index of book
 let currentBookId = null;
 
 // ******************************************************************
