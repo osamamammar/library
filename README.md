@@ -27,6 +27,7 @@ JS practice project from (The Odin Project). library
    <br></br>
   <img width="600" height="300" src="https://raw.githubusercontent.com/osamamammar/library/main/src/images/modal.png">
 </p>
+
 ## Getting started
 
 - Clone the repository then write `npm i`
