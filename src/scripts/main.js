@@ -39,12 +39,14 @@ closeModalIcon.addEventListener('click', closeModal);
 function closeModal() {
 	modalContainer.classList.remove('open');
 	overlay.classList.remove('active');
+	document.body.classList.remove('no-scroll');
 }
 
 // function to open modal
 function openModal(currentBook) {
 	overlay.classList.add('active');
 	modalContainer.classList.add('open');
+	document.body.classList.add('no-scroll');
 	changeModalDescription(myLibrary[currentBook]);
 }
 

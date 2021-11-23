@@ -449,3 +449,7 @@ table td {
 	font-weight: 100;
 	color: #980404;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
