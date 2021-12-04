@@ -47,11 +47,16 @@ function openModal(currentBook) {
 	overlay.classList.add('active');
 	modalContainer.classList.add('open');
 	document.body.classList.add('no-scroll');
-	changeModalDescription(myLibrary[currentBook]);
+	myLibrary.map((book) => {
+		if (book._id === currentBook) {
+			changeModalDescription(book);
+		}
+	});
 }
 
 // function to change modal description
 function changeModalDescription(book) {
+	console.log(book);
 	if (book) {
 		modalDescription.innerHTML = `Are you sure you want to delete <span class="description-title">"${book.bookName}"</span> by <span class="description-title">"${book.authorName}"</span> ?`;
 	} else {
@@ -142,9 +147,7 @@ function changeStatue(book) {
 // function to delete book form array
 function deleteBook(currentBook) {
 	return myLibrary.splice(currentBook, 1);
-
-	// myLibrary = myLibrary.filter((_, index) => index !== currentBook);
-	// console.log(myLibrary);
+	// myLibrary.filter((book) => book._id !== currentBook);
 }
 
 // function to find book index in array
@@ -157,7 +160,6 @@ function findBook(libraryArray, id) {
 	// 	if (book.bookName === name) {
 	// 		return libraryArray.indexOf(book);
 	// 	}
-
 	return libraryArray.findIndex((book) => book._id === id);
 }
 
@@ -202,7 +204,7 @@ function changeStatueBtnAfterRenderUi() {
 	// select all change statue btn nodelist
 	const changeStatueBtns = document.querySelectorAll('.statue-btn');
 
-	if (changeStatueBtns.length != 0) {
+	if (changeStatueBtns.length !== 0) {
 		changeStatueBtns.forEach((changeBtn) => changeBtn.addEventListener('click', handleChangeEvent));
 	} else {
 		return;
@@ -222,7 +224,7 @@ function deleteBookBtnAfterRenderUi() {
 	// select all delete statue btn nodelist
 	const deleteBookBtns = document.querySelectorAll('.delete-book');
 
-	if (deleteBookBtns.length != 0) {
+	if (deleteBookBtns.length !== 0) {
 		deleteBookBtns.forEach((removeBookBtn) => {
 			removeBookBtn.addEventListener('click', handleDeleteEvent);
 		});
@@ -235,6 +237,7 @@ function deleteBookBtnAfterRenderUi() {
 function handleDeleteEvent(e) {
 	const currentTarget = Number(e.target.dataset.id);
 	openModal(currentTarget);
+	console.log(currentTarget, 'currentTarget');
 	// save currentTarget in global variable
 	currentBookId = currentTarget;
 }
@@ -243,12 +246,15 @@ function handleDeleteEvent(e) {
 modalCancelBtn.addEventListener('click', closeModal);
 
 // event listener for delete modal btn
-modalDeleteBtn.addEventListener('click', handleDeleteModalBtn.bind(currentBookId));
+modalDeleteBtn.addEventListener('click', function () {
+	handleDeleteModalBtn(currentBookId);
+});
 
 // function to handle delete modal btn
 function handleDeleteModalBtn(currentBookId) {
-	// let result = myLibrary.filter((book) => book._id != currentTarget);
+	// let result = myLibrary.filter((book) => book._id !== currentBookId);
 	// console.log(result);
+	console.log(findBook(myLibrary, currentBookId));
 	deleteBook(findBook(myLibrary, currentBookId));
 	updateLibraryInLocalStorage();
 	renderUi();
