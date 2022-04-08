@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="no-js" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- TODO add a title here-->
+    <title>library</title>
+    <meta name="description" content="calculator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+    <!-- TODO add a favicon-->
+    <link rel="shortcut icon" href="./images/library-logo.svg">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  </head>
+  <body>
+    <!--[if lt IE 10]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" upgrade your browser to improve your experience.</p>-->
+    <div class="overlay"></div>
+    <header class="header-container">
+      <h1 class="visually-hidden">Library</h1>
+      <nav class="nav-container">
+        <div class="nav-container__logo"><img class="nav-container__logo--image" src="./images/library-logo.svg" alt="logo">
+          <h2 class="nav-container__logo--title">Library</h2>
+        </div>
+        <div class="nav-container__end">
+          <p class="nav-container__end--description">	A vanilla JS project from  <strong> The Odin Project </strong>  curriculum.</p>
+          <div class="nav-container__end--btn"><a href="https://github.com/osamamammar" target="_blank">
+              <button class="nav-container__end--btn--gray" type="button"><img class="nav__btn--img" src="./images/github-logo.svg" alt="github-logo">my GitHub</button></a><a href="https://github.com/osamamammar/library" target="_blank">
+              <button class="nav-container__end--btn--light" type="button"><img class="nav__btn--img" src="./images/github-logo.svg" alt="github-logo">Source code</button></a></div>
+        </div>
+      </nav>
+      <div class="modal-container">
+        <div class="modal-container__header">
+          <h3 class="modal-container__header--title">Book Removal</h3><span class="modal-container__header--icon"></span>
+        </div>
+        <div class="modal-container__content">
+          <p class="modal-container__content--description">Are you sure you want to delete this book ?</p>
+          <div class="modal-container__content--cta-container">
+            <button class="cta-btn--cancel" type="button">Cancel</button>
+            <button class="cta-btn--delete" type="button">Delete</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-container">
+      <section class="card-container">
+        <div class="card-container__content">
+          <h4 class="card-container__content--title">Add new book</h4>
+          <form class="form">
+            <div class="card-container__columns">
+              <div class="card-container__column">
+                <label class="card-container__column--label" for="bookName">Book</label>
+                <input class="card-container__column--input" type="text" name="bookName" id="bookName" placeholder="Enter book name"><small class="book-error-msg">please enter book name *</small>
+              </div>
+              <div class="card-container__column">
+                <label class="card-container__column--label" for="authorName">Author</label>
+                <input class="card-container__column--input" type="text" name="authorName" id="authorName" placeholder="Enter author name"><small class="author-error-msg">please enter author name *</small>
+              </div>
+              <div class="card-container__column">
+                <label class="card-container__column--label" for="pagesNumber">Pages</label>
+                <input class="card-container__column--input" type="number" name="pagesNumber" id="pagesNumber" placeholder="Enter number" step="1"><small class="number-error-msg">please enter number bigger than 0 *</small>
+              </div>
+              <div class="card-container__column">
+                <label class="card-container__column--label" for="statue">Statue</label>
+                <select class="card-container__column--select" id="statue" name="statue">
+                  <option value="read" selected>read</option>
+                  <option value="not read">not read</option>
+                </select>
+              </div>
+            </div>
+            <button class="card-container__columns--btn" type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+      <section class="table-container">
+        <h5 class="table-container__title">my Books</h5>
+        <div class="table-container__content">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Statue</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody class="books_container"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><a href="https://github.com/osamamammar" target="_blank"> 
+        <P class="footer__title">Osama Mohamed (GitHub)</P></a></footer>
+    <script type="module" src="scripts/main.js"></script>
+    <script nomodule src="scripts/app.nomodule.js"></script>
+  </body>
+</html>
