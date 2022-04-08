@@ -1,5 +1,0 @@
-{
-	"*.{png,jpeg,jpg,gif,svg}": ["imagemin-lint-staged"],
-	"*.js": ["eslint --fix"],
-	"*.css": ["stylelint"]
-}
