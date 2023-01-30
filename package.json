@@ -35,7 +35,7 @@
 		"lint-staged": "^11.1.2",
 		"ncp": "^2.0.0",
 		"postcss": "^8.2.10",
-		"postcss-dir-pseudo-class": "^5.0.0",
+		"postcss-dir-pseudo-class": "^7.0.1",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-import": "^14.0.2",
 		"postcss-load-config": "^3.1.0",
